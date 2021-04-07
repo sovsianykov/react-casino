@@ -13,9 +13,7 @@ function App() {
     const [currentSpin, setCurrentSpin ] = useState({  slot1: 0, slot2: 0, slot3: 0, time : time })
     const [open, setOpen] = React.useState(false);
 
-    const handleClose = () => {
-        setOpen(false);
-    };
+
       const handleOpen = () => {
         setOpen(true);
     };

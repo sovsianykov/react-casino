@@ -42,7 +42,7 @@ export default function Header({balance,setBalance}) {
         }
 
 
-    },[setNickname] )
+    },[nickname, setBalance, setNickname] )
 
     const handleClose = () => {
         setOpen(false);
