@@ -30,14 +30,27 @@ function App() {
         if (spin1 === spin2 && spin2 === spin3 ) { setBalance(balance + 5)  }
         else if ( spin1 === spin2 || spin2 === spin3 || spin1 === spin3 ) {setBalance(balance + 0.5)}
     }
+    const test777 =() =>{
+        let spin1 =  7;
+        let spin2 = 7;
+        let spin3 = 7;
+
+        let spinArr = [{slot1: spin1, slot2: spin2, slot3: spin3, time : time  }]
+        setCurrentSpin(spinArr[0])
+        setBalance(balance -1)
+        setSpinRow(spinRow.concat(spinArr))
+        if (spin1 === spin2 && spin2 === spin3 ) { setBalance(balance + 5)  }
+        else if ( spin1 === spin2 || spin2 === spin3 || spin1 === spin3 ) {setBalance(balance + 0.5)}
+
+    }
 
   return (
     <div className="App">
       <Header balance = {balance} setBalance={setBalance}  />
-        <Button variant='contained' color='secondary' onClick={handleOpen} >
+        <Button variant='contained' className='btn-start' color='secondary' onClick={handleOpen} >
             START TO PLAY
         </Button>
-        <PlayingModal open = {open} setOpen = {setOpen} currentSpin = {currentSpin} getSpin = {getSpin} />
+        <PlayingModal open = {open} setOpen = {setOpen} currentSpin = {currentSpin} getSpin = {getSpin} test777={test777} />
       <Content spinRow = { spinRow }/>
       <Footer/>
     </div>

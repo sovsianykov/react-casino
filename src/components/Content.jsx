@@ -1,15 +1,15 @@
 
 import * as React from 'react';
-import {Button, Grid, Paper, Typography} from "@material-ui/core";
+import { Grid, Paper, Typography} from "@material-ui/core";
 import Spins from "./Spins/Spins";
-import {useStyles} from "./styles";
+import { useStyles } from "./styles";
 
 
 const Content = ({spinRow}) => {
     const classes =useStyles()
     return (
         <div className={classes.table}>
-            <Grid container justify='center'spacing={2}>
+            <Grid container justify='center' spacing={2}>
                 <Grid item xs={1} sm={1} md={1}  className={classes.item}>
                     <Paper>
                         <Typography variant='h4'>

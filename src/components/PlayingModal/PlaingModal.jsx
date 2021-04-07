@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function PlayingModal({open, setOpen, currentSpin, getSpin}) {
+export default function PlayingModal({open, setOpen, currentSpin, getSpin , test777 }) {
     const classes = useStyles();
     // getModalStyle is not a pure function, we roll the style only on the first render
     const [modalStyle] = React.useState(getModalStyle);
@@ -47,7 +47,7 @@ export default function PlayingModal({open, setOpen, currentSpin, getSpin}) {
             { currentSpin ?  <Typography variant= 'h2' color='secondary' align='center'>{currentSpin.slot1}{currentSpin.slot2}{currentSpin.slot3}</Typography>: ''
             }
              <Button variant='contained' style={{width: '33.3%'}} color= 'primary' onClick={getSpin}>Spin</Button>
-             <Button variant='contained' style={{width: '33.3%'}} color= 'secondary'>777</Button>
+             <Button variant='contained' style={{width: '33.3%'}} color= 'secondary' onClick={test777}>777</Button>
              <Button variant='contained' style={{width: '33.3%'}} color= 'default' onClick={handleClose}>Close</Button>
             <PlayingModal />
         </div>
