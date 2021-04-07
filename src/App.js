@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Header from "./components/Header";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
@@ -43,8 +43,19 @@ function App() {
         else if ( spin1 === spin2 || spin2 === spin3 || spin1 === spin3 ) {setBalance(balance + 0.5)}
 
     }
+    useEffect(() =>{
+        const data = localStorage.getItem('my-store')
+        if (data) {  setSpinRow(JSON.parse(data))}
+        const data2 = localStorage.getItem('my-store2')
+        if (data2) { setBalance(JSON.parse(data2))}
+    },[])
+    useEffect(() =>{
+        localStorage.setItem('my-store',JSON.stringify(spinRow))
+        localStorage.setItem('my-store2',JSON.stringify(balance))
+    })
 
-  return (
+
+    return (
     <div className="App">
       <Header balance = {balance} setBalance={setBalance}  />
         <Button variant='contained' className='btn-start' color='secondary' onClick={handleOpen} >
@@ -56,5 +67,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

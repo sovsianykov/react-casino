@@ -36,13 +36,7 @@ export default function Header({balance,setBalance}) {
     };
     const [ nickname , setNickname ] = useState('guest');
 
-    useEffect(()=>{
-        if (nickname !== 'guest') {
-            setBalance(99.99)
-        }
 
-
-    },[nickname, setBalance, setNickname] )
 
     const handleClose = () => {
         setOpen(false);
@@ -55,6 +49,15 @@ export default function Header({balance,setBalance}) {
         setNickname('guest')
         setBalance('')
     }
+    useEffect(() =>{
+        const data = localStorage.getItem('my-store3')
+        if (data) {  setNickname(JSON.parse(data))}
+
+    },[])
+    useEffect(() =>{
+        localStorage.setItem('my-store3',JSON.stringify(nickname))
+    })
+
 
     const body = (
         <div style={modalStyle} className={classes.paper}>
