@@ -10,6 +10,20 @@ export const useStyles = makeStyles((theme) => ({
     title: {
         flexGrow: 1,
     },
+    item: {
+      width : 200 ,
+        textAlign: "center",
+        marginTop: '20px'
+    },
+    table: {
+        width : '60%' ,
+        textAlign: "center",
+        position : "fixed",
+        bottom: 100,
+        left: '20%',
+        zIndex : '-1',
+
+    },
     paper: {
         position: 'absolute',
         width: 400,
@@ -18,4 +32,5 @@ export const useStyles = makeStyles((theme) => ({
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
     },
+
 }));

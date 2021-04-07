@@ -49,7 +49,7 @@ export default function Header({balance,setBalance}) {
     };
    const handleLogin =(e)=>{
        setNickname(e.target.value)
-       setBalance('$99')
+       setBalance(99)
    }
     const handleLogout =()=>{
         setNickname('guest')
@@ -85,7 +85,7 @@ export default function Header({balance,setBalance}) {
                         {body}
 
                     </Modal>
-                    {nickname}   {balance}
+                    {nickname}  ${balance}
                        <Button color="inherit" onClick={handleOpen} >Login</Button>
                        <Button color="inherit" onClick={handleLogout} >Logout</Button>
 
